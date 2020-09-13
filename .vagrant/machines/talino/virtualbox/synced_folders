@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/code/talino":{"type":null,"mount_options":["uid=1000","gid=1000"],"guestpath":"/home/vagrant/code/talino","hostpath":"D:/work/Projects/Personal/talino","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"D:/work/Projects/Personal/talino","disabled":false,"__vagrantfile":true}}}
