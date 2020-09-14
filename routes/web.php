@@ -13,6 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::name('pages.homepage')->get('/', 'PageController@homepage');
+
+Route::name('news.show')->get('news/{slug}', 'NewsController@show');

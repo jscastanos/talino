@@ -21,9 +21,10 @@
     ])
 
     @formField('select', [
-        'name' => 'branch_id',
+        'name' => 'category_id',
         'label' => 'Select Category',
-        'options'=> $branches
+        'options'=> $categories,
+        'default' => 2
     ])
 
     @formField('medias', [

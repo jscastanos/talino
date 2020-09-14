@@ -7,17 +7,17 @@ class CreateBranchesTables extends Migration
 {
     public function up()
     {
-        Schema::create('branches', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             createDefaultTableFields($table);
             $table->string('name')->unique();
         });
 
         Schema::table('news', function (Blueprint $table) {
-            $table->integer('branch_id')->nullable();
+            $table->integer('category_id')->nullable();
         });
 
-        Schema::create('branch_slugs', function (Blueprint $table) {
-            createDefaultSlugsTableFields($table, 'branch');
+        Schema::create('category_slugs', function (Blueprint $table) {
+            createDefaultSlugsTableFields($table, 'category');
         });
 
     }
@@ -25,7 +25,7 @@ class CreateBranchesTables extends Migration
     public function down()
     {
 
-        Schema::dropIfExists('branch_slugs');
-        Schema::dropIfExists('branches');
+        Schema::dropIfExists('category_slugs');
+        Schema::dropIfExists('category');
     }
 }

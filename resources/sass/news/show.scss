@@ -1,0 +1,52 @@
+@import '~bootstrap/scss/bootstrap';
+
+
+@include media-breakpoint-down(xs)
+{
+    .title{
+        font-size: 20px;
+        font-weight: bolder;
+    }
+}
+
+.title{
+    font-weight: 900;
+    margin: 20px 0;
+}
+
+.description_box{
+    img{
+        @include img-fluid();
+        width: 100%;
+    }
+
+    p{
+        text-align: justify;
+        font-size: medium;
+
+        strong {
+            font-size: larger;
+        }
+    }
+}
+
+.feature-card{
+    a{
+        text-decoration: none;
+    }
+
+    .feature-title{
+        font-size: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        height: 60px;
+    }
+}
+
+.badge span{
+    color: white;
+    mix-blend-mode: hard-light;
+}

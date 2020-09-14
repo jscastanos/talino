@@ -5,7 +5,7 @@ return [
         'title' => 'News',
         'module' => true
     ],
-    'branches' => [
+    'categories' => [
         'title' => 'Category',
         'module' => true
     ]

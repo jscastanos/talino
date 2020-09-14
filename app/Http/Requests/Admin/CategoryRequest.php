@@ -4,7 +4,7 @@ namespace App\Http\Requests\Admin;
 
 use A17\Twill\Http\Requests\Admin\Request;
 
-class BranchRequest extends Request
+class CategoryRequest extends Request
 {
     public function rulesForCreate()
     {

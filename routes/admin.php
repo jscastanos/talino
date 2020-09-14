@@ -1,4 +1,4 @@
 <?php
 
 Route::module('news');
-Route::module('branches');
+Route::module('categories');

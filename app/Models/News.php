@@ -6,7 +6,7 @@ use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
-use App\Models\Branch;
+use App\Models\Category;
 
 class News extends Model
 {
@@ -16,7 +16,7 @@ class News extends Model
         'published',
         'title',
         'description',
-        'branch_id'
+        'category_id'
     ];
 
     public $slugAttributes = [
@@ -54,8 +54,8 @@ class News extends Model
         ],
     ];
 
-    public function branch()
+    public function category()
     {
-        return $this->belongsTo(Branch::class);
+        return $this->belongsTo(Category::class);
     }
 }

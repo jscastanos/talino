@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController;
 
-class BranchController extends ModuleController
+class CategoryController extends ModuleController
 {
-    protected $moduleName = 'branches';
+    protected $moduleName = 'categories';
     protected $titleColumnKey = 'name';
 }
