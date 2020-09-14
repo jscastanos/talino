@@ -6,8 +6,9 @@ use A17\Twill\Models\Behaviors\HasBlocks;
 use A17\Twill\Models\Behaviors\HasSlug;
 use A17\Twill\Models\Behaviors\HasMedias;
 use A17\Twill\Models\Model;
+use App\Models\Branch;
 
-class News extends Model 
+class News extends Model
 {
     use HasBlocks, HasSlug, HasMedias;
 
@@ -15,12 +16,13 @@ class News extends Model
         'published',
         'title',
         'description',
+        'branch_id'
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
     public $mediasParams = [
         'cover' => [
             'desktop' => [
@@ -51,4 +53,9 @@ class News extends Model
             ],
         ],
     ];
+
+    public function branch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
 }

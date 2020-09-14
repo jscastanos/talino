@@ -20,7 +20,13 @@
         ]
     ])
 
-    @formField('medias',[
+    @formField('select', [
+        'name' => 'branch_id',
+        'label' => 'Select Category',
+        'options'=> $branches
+    ])
+
+    @formField('medias', [
         'name' => 'cover',
         'label' => 'Cover Image'
     ])
