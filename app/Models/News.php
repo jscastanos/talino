@@ -56,6 +56,7 @@ class News extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class);
+        return $this->belongsTo(Category::class)
+                    ->select(['id', 'name', 'badge_color', 'created_at']);
     }
 }

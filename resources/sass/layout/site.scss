@@ -1,6 +1,20 @@
-footer{
-    text-align: center;
-    height: 50px;
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    display: table;
+    width: 100%;
+    min-height:100%;
+}
+
+header{
     background-color: black;
     color: white;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    display: table-footer-group;
 }

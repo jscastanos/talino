@@ -9,16 +9,23 @@
     }
 }
 
+@include media-breakpoint-down(md)
+{
+    .description_box{
+        img{
+            @include img-fluid();
+            width: 100%;
+        }
+
+    }
+}
+
 .title{
     font-weight: 900;
     margin: 20px 0;
 }
 
 .description_box{
-    img{
-        @include img-fluid();
-        width: 100%;
-    }
 
     p{
         text-align: justify;
@@ -49,4 +56,8 @@
 .badge span{
     color: white;
     mix-blend-mode: hard-light;
+}
+
+.badge-bigger{
+    font-size: medium;
 }

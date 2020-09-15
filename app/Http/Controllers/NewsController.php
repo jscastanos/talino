@@ -16,12 +16,19 @@ class NewsController extends Controller
 
     public function show($slug)
     {
-        $news = $this->repository->forSlug($slug);
+        $news = $this->repository
+                    ->forSlug($slug);
+
         abort_unless($news, 404, 'News ');
 
         // latest
-        $latest_news = $this->repository->getLatestNews($news->id);
+        $latest_news = $this->repository
+                            ->getLatestNews($news->id);
 
-        return view('news.show', compact('news', 'latest_news'));
+        // latest by category
+        $latest_news_by_category = $this->repository
+                                        ->getLatestNewsByCurrentCategory($news->id, $news->category_id);
+
+        return view('news.show', compact('news', 'latest_news', 'latest_news_by_category'));
     }
 }

@@ -12,7 +12,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//general pages
 Route::name('pages.homepage')->get('/', 'PageController@homepage');
 
+//news
 Route::name('news.show')->get('news/{slug}', 'NewsController@show');
+
+//categories
+Route::name('categories.index')->get('categories/{slug}', 'CategoryController@index');

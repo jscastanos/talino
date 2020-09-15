@@ -25,7 +25,18 @@ class NewsRepository extends ModuleRepository
             ->published()
             ->where('id' , '!=', $current_news_id)
             ->orderBy('created_at', 'desc')
-            ->take(3)
+            ->take(4)
+            ->get();
+    }
+
+    public function getLatestNewsByCurrentCategory($current_news_id, $category_id)
+    {
+        return $this->model
+            ->published()
+            ->where('id' , '!=', $current_news_id)
+            ->where('category_id', '=', $category_id)
+            ->orderBy('created_at', 'desc')
+            ->take(4)
             ->get();
     }
 

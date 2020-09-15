@@ -18,6 +18,8 @@ require File.expand_path(confDir + '/scripts/homestead.rb')
 Vagrant.require_version '>= 2.2.4'
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+    config.vm.boot_timeout = 2000
+
     if File.exist? aliasesPath then
         config.vm.provision "file", source: aliasesPath, destination: "/tmp/bash_aliases"
         config.vm.provision "shell" do |s|
@@ -49,5 +51,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         config.hostmanager.enabled = true
         config.hostmanager.manage_host = true
         config.hostmanager.aliases = settings['sites'].map { |site| site['map'] }
+    end
+
+    if Vagrant.has_plugin?('vagrant-vbguest')
+        config.vbguest.auto_update = false
+        config.vbguest.no_remote = true
     end
 end

@@ -11,14 +11,36 @@
 </head>
 
 <body>
-    <header class="container-fluid" style="height: 50px; background-color: red">
+    <header class="container-fluid">
         header
     </header>
 
     @yield('content')
 
-    <footer class="container-fluid pt-3">
-        <h5>Talino @ {{ now()->year }}</h5>
+    <footer>
+        <div class="container p-4 pt-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <h2>Talino </h2>
+                    <p>
+                        Your daily source of science &amp; technology
+                        news, happenings, discoveries and many more.
+                    </p>
+                </div>
+                <div class="col-md-9">
+                    x
+                </div>
+
+                <div class="col-md-12">
+                    <p class="text-center">
+                        Developed by <a href="https://github.com/jscastanos" target="_blank">Zeck</a>
+                    </p>
+                    <p class="text-center">
+                        Source code @ <a href="https://github.com/jscastanos/talino">GitHub</a>
+                    </p>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 

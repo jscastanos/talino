@@ -1,5 +1,7 @@
 @extends('layouts.site')
 
 @section('content')
-<h1>hey</h1>
+    <section class="container mt-3 pt-3">
+        <h1></h1>
+    </section>
 @endsection
