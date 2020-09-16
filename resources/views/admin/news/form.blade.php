@@ -24,7 +24,7 @@
         'name' => 'category_id',
         'label' => 'Select Category',
         'options'=> $categories,
-        'default' => 2
+        'default' => 1
     ])
 
     @formField('medias', [

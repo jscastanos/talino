@@ -18,26 +18,52 @@ class NewsRepository extends ModuleRepository
         $this->model = $model;
     }
 
-
-    public function getLatestNews($current_news_id)
+    public function addPageVisit($newsId)
     {
-        return $this->model
-            ->published()
-            ->where('id' , '!=', $current_news_id)
-            ->orderBy('created_at', 'desc')
-            ->take(4)
-            ->get();
+        $news = $this->model::findOrFail($newsId);
+        $news->page_visit = $news->page_visit += 1;
+        $news->last_page_visit = now();
+        $news->save();
+
+        return $news;
     }
 
-    public function getLatestNewsByCurrentCategory($current_news_id, $category_id)
+    private function filteredNews($currentNewsId, $categoryId)
     {
-        return $this->model
-            ->published()
-            ->where('id' , '!=', $current_news_id)
-            ->where('category_id', '=', $category_id)
-            ->orderBy('created_at', 'desc')
-            ->take(4)
-            ->get();
+        $latestNews = $this->model->published();
+        // check newsId
+        $latestNews = $currentNewsId != null ? $latestNews->where('id' , '!=', $currentNewsId)
+                                            : $latestNews;
+        // check categoryId
+        $latestNews = $categoryId != null ? $latestNews->where('category_id', '=', $categoryId)
+                                            : $latestNews;
+        return $latestNews;
+    }
+
+    public function getLatestNews($currentNewsId = null, $categoryId = null, $count = 4, $skip = 0)
+    {
+        return $this->filteredNews($currentNewsId, $categoryId)
+                    ->orderBy('created_at', 'desc')
+                    ->skip($skip)
+                    ->take($count)
+                    ->get();
+    }
+
+
+
+    public function getPopularNews($currentNewsId = null, $categoryId = null, $type = 'W', $count = 4, $skip = 0)
+    {
+        // if W (week) then get last 7 days
+        // if M (month) then get last 30 days excluding this week
+        $from = $type == 'W' ? now()->subDay(6) : now()->subDay(37);
+        $to = $type == 'W' ? now()->addDay(1) : now()->subDay(7);
+
+        return $this->filteredNews($currentNewsId, $categoryId)
+                    ->whereBetween('last_page_visit', [$from, $to])
+                    ->orderBy('page_visit', 'desc')
+                    ->skip($skip)
+                    ->take($count)
+                    ->get();
     }
 
 }

@@ -13,7 +13,6 @@
 {
     .description_box{
         img{
-            @include img-fluid();
             width: 100%;
         }
 
@@ -26,6 +25,11 @@
 }
 
 .description_box{
+
+    img{
+        @include img-fluid();
+        max-width: 100%;
+    }
 
     p{
         text-align: justify;

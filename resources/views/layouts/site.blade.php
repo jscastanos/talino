@@ -11,37 +11,9 @@
 </head>
 
 <body>
-    <header class="container-fluid">
-        header
-    </header>
-
+    @include('partials.header');
     @yield('content')
-
-    <footer>
-        <div class="container p-4 pt-5">
-            <div class="row">
-                <div class="col-md-3">
-                    <h2>Talino </h2>
-                    <p>
-                        Your daily source of science &amp; technology
-                        news, happenings, discoveries and many more.
-                    </p>
-                </div>
-                <div class="col-md-9">
-                    x
-                </div>
-
-                <div class="col-md-12">
-                    <p class="text-center">
-                        Developed by <a href="https://github.com/jscastanos" target="_blank">Zeck</a>
-                    </p>
-                    <p class="text-center">
-                        Source code @ <a href="https://github.com/jscastanos/talino">GitHub</a>
-                    </p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    @include('partials.footer');
 </body>
 
 </html>

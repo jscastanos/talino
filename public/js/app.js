@@ -37266,6 +37266,24 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+window.onLoadMorePage = function (view, count, skip) {
+  $('#loadMoreNews').prop('disabled', true);
+  $.ajax({
+    url: "/news/view/".concat(view, "/").concat(count, "/").concat(skip),
+    type: 'GET',
+    success: function success(data) {
+      $('#latestNews').append(data.list);
+      $('#loadMoreNews').prop('disabled', false);
+      skip += data.length;
+
+      if (data.length === 0 || data.length < count) {
+        $('#noMoreNews').removeClass('d-none');
+        $('#loadMoreNews').addClass('d-none');
+      }
+    }
+  });
+};
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":
