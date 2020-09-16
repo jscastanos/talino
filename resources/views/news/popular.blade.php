@@ -1,5 +1,7 @@
 @extends('layouts.site')
 
+@section('title', 'Popular News')
+
 @section('content')
     <section class="container mt-3 mb-3">
         <h3 class="title">

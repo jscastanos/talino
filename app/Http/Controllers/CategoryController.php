@@ -20,7 +20,6 @@ class CategoryController extends Controller
         abort_unless($categories, 404, "Category ");
 
         $popularNews = $this->newsRepository->getPopularNews(null, $categories->id);
-
         return view('categories.index', compact('categories', 'popularNews'));
     }
 }

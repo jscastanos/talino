@@ -27,15 +27,18 @@
     <h3 class="title">
         <i class="fa fa-flask"></i> More News
     </h3>
-
     @if (count($categories->news) > 0)
         <div class="row">
             @foreach ($categories->news as $news )
             <div class="col-md-4 mb-3 feature-card">
                 <a href="/news/{{ $news->slug }}">
                     <div class="card">
-                        <img class="img-fluid" alt="{{ $news->imageAltText('cover') }}"
-                            src="{{ $news->image('cover', 'desktop') }}">
+                        @if (filter_var($news->image('cover', 'desktop'), FILTER_VALIDATE_URL))
+                            <img class="img-fluid" alt="{{ $news->imageAltText('cover') }}"
+                                src="{{ $news->image('cover', 'desktop') }}">
+                        @else
+                            <img class="img-fluid" alt="default" src="https://via.placeholder.com/250x230">
+                        @endif
                         <div class="card-body">
                             <span class="float-right">{{ $news->created_at->format('M d, Y') }}</span>
                             <span class="badge" style="background-color: {{ $categories->badge_color }}">

@@ -1,5 +1,5 @@
 @extends('layouts.site')
-
+@section('title', $news->title)
 @section('content')
     <section class="container mt-3 mb-3">
         <nav aria-label="breadcrumb">
@@ -21,7 +21,7 @@
         <div class="row">
             {{-- BODY OF NEWS --}}
             <div class="col-md-9">
-                <img src="{{ $news->image('cover', 'desktop') }}" class="img-fluid" alt="">
+                <img src="{{ $news->image('cover', 'desktop') }}" d class="img-fluid" alt="">
                 <div class="p-md-4">
                     <h1 class="title">{{ $news->title }}</h1>
                     <span class="badge badge-bigger" style="background-color:{{ $news->category->badge_color }}">

@@ -28,7 +28,7 @@ class NewsRepository extends ModuleRepository
         return $news;
     }
 
-    private function filteredNews($currentNewsId, $categoryId)
+    public function filteredNews($currentNewsId, $categoryId)
     {
         $latestNews = $this->model->published();
         // check newsId

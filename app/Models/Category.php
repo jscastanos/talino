@@ -23,6 +23,7 @@ class Category extends Model
     public function news()
     {
         return $this->hasMany(News::class)
+                    ->published()
                     ->select(['id', 'title', 'created_at']);
     }
 }
