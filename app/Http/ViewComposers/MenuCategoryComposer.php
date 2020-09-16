@@ -16,7 +16,7 @@ class MenuCategoryComposer
      */
     public function __construct(CategoryRepository $categoryRepository, NewsRepository $newsRepository)
     {
-        $this->newsRepository = $newsRepository->getPopularNews(null, null, 'W', 5);
+        $this->newsRepository = $newsRepository->getPopularNews(null, null, 'W', 4);
         $this->menuCategoryList = $categoryRepository->allCategories();
     }
 

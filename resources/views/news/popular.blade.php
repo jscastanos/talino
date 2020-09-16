@@ -4,6 +4,7 @@
 
 @section('content')
     <section class="container mt-3 mb-3">
+        <h2>Popular News</h2>
         <h3 class="title">
             <i class="fa fa-line-chart"></i> This Week
         </h3>

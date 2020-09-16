@@ -11,27 +11,27 @@
             </div>
 
             <div class="col-md-3 mt-3 ml-auto">
-                <h5>
+                <h5 class="mb-3">
                     <i class="fa fa-line-chart"></i>
                     What's Popular?
                 </h5>
                 <ul class="menu-category">
                     @foreach ($popularNews as $news)
-                    <li class="pt-2">
+                    <li class="mt-2">
                         <a href="/news/{{ $news->slug }}">{{ $news->title }}</a>
                     </li>
                     @endforeach
                 </ul>
             </div>
             <div class="col-md-3 mt-3 ml-auto">
-                <h5>
+                <h5 class="mb-3">
                     <i class="fa fa-list"></i>
                     Browse by Category
                 </h5>
                 <ul class="menu-category
                         {{ count($menuCategory) > 6 ? 'menu-two-columns' : '' }}">
                     @foreach ($menuCategory as $menu)
-                    <li>
+                    <li class="mt-2">
                         <a href="/categories/{{ $menu->slug }}">{{ $menu->name }}</a>
                     </li>
                     @endforeach

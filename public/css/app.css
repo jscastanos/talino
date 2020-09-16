@@ -35765,6 +35765,11 @@ footer .menu-category {
 footer .menu-category li {
   font-size: 16px;
   margin-left: -30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
 footer .menu-category li a {
