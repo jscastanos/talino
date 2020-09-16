@@ -49,8 +49,6 @@ class NewsRepository extends ModuleRepository
                     ->get();
     }
 
-
-
     public function getPopularNews($currentNewsId = null, $categoryId = null, $type = 'W', $count = 4, $skip = 0)
     {
         // if W (week) then get last 7 days

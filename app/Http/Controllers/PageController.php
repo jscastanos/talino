@@ -18,7 +18,6 @@ class PageController extends Controller
     {
         $latestNews = $this->newsRepository->getLatestNews(null, null, 3);
         $popularNews = $this->newsRepository->getPopularNews(null, null, 'W', 6);
-        $categories = $this->categoryRepository->allCategories();
-        return view('pages.homepage', compact('latestNews', 'categories', 'popularNews'));
+        return view('pages.homepage', compact('latestNews', 'popularNews'));
     }
 }
