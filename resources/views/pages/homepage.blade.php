@@ -1,5 +1,5 @@
 @extends('layouts.site')
-
+@section('title', 'Your daily source of science & technology news, happenings, discoveries and many more.')
 @section('content')
     <section class="container mt-3 mb-3">
         <div id="popularNews" class="carousel slide" data-ride="carousel">

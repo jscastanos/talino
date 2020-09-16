@@ -1,5 +1,5 @@
 @extends('layouts.site')
-
+@section('title', $categories->name)
 @section('content')
 <section class="container mt-3 mb-3">
     <nav aria-label="breadcrumb">
