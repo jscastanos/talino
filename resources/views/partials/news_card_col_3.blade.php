@@ -6,7 +6,7 @@
             <div class="card-body">
                 <span class="float-right">{{ $news->created_at->format('M d, Y') }}</span>
                 <span class="badge" style="background-color: {{ $news->category->badge_color }}">
-                <span>{{ $news->category->name }}</span>
+                    <span>{{ $news->category->name }}</span>
                 </span>
                 <h4 class="feature-title mt-3">{{ $news->title }}</h4>
             </div>
