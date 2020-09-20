@@ -1,10 +1,8 @@
-
-<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" height="100" />
-<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg" height="100" />
-<img src="https://camo.githubusercontent.com/27cb603e58909fdb7cbe5a0e886dac1694a6c683/68747450733a2f2f7477696c6c2e696f2f6c6f676f2e737667" height="100"/>
+<img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" height="100" align="left"/>
+<img src="https://upload.wikimedia.org/wikipedia/commons/9/9e/Plus_symbol.svg" height="100" align="left" />
+<img src="https://camo.githubusercontent.com/27cb603e58909fdb7cbe5a0e886dac1694a6c683/68747470733a2f2f7477696c6c2e696f2f6c6f676f2e737667" height="100"/>
 
 # Talino
-
 A blog app built using Laravel + Twill CMS
 
 ## Screenshot
